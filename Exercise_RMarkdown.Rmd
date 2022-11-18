@@ -40,43 +40,57 @@ output:
 
 ```{block, box.title = "Exercise 3", box.body = list(fill = "white"), box.icon = "fa-star"}
 Include a setup chunk in your document. Use this chunk to set the `knitr` options so that the code is displayed in the output document but messages are suppressed.
+
 Three other things we want to do in the setup chunk:
+
 - set the "penalty to be applied when deciding to print numeric values in fixed or exponential notation" to 10
 - set the number of significant digits to print to 2
 ```
 
 ```{block, opts.label = "clues", box.icon = "fa-lightbulb"}
 For the general options (i.e., the one not related to `knitr`), you can check `?options`.
+
 You probably do not want to include the chunk options as code output in the resulting `HTML` document. You can achieve this by setting the chunk option `include` to `FALSE` for the setup chunk.
+
 Of course, if you want to use additional/other packages, you can also add those to the setup chunk.
 ```
 
 ```{block, box.title = "Solution 3", solution = TRUE, box.icon = "fa-check"}
 Chunk options: {r setup, include=FALSE}
 (for the code to be included in this chunk, see the following solution box)
+
 *NB*: In your `R Markdown` document, a code block needs to start and end with three backticks. Remember that in *RStudio* you can use the keyboard shortcut <kbd>Ctrl + Alt + I</kbd> (*Windows* & *Linux*)/<kbd>Cmd + Option + I</kbd> (*Mac*) for inserting code chunks.
 ```
 
 ```{r setup, eval = FALSE, box.title = "Solution 3", solution = TRUE, box.icon = "fa-check"}
 knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE)
+
 options(scipen = 10,
         digits = 2)
 ```
 
 ```{block, box.title = "Exercise 4", box.body = list(fill = "white"), box.icon = "fa-star"}
 Now you can start to create some content for your document. You can get as creative as you want, but we suggest that the document (at least) includes the following:
+
 - two different levels of headings
+
 - some basic text formatting and links
+
 - some inline code
+
 - multiple code chunks (with different chunk options)
+
 - at least one table
+
 - at least one figure
+
 We also suggest that you loosely follow the structure of a classic research paper (Research Question, Methods, Results), but each of the sections should be very brief.
 ```
 
 ```{block, opts.label = "clues", box.icon = "fa-lightbulb"}
 To check if everything works the way you expect, you should knit the document periodically. Also remember that we have created (and also knitted) an exemplary report which you can find in the `solutions` folder.
+
 Please note that we use several different packages in that example document. For example, we make use of the [`tidyverse` collection of packages](https://www.tidyverse.org/) for wrangling the data. If you are not familiar with that (e.g., the use of pipes `%>%`) or prefer other packages for creating tables or plots, feel free to change anything you like in that document.
 ```
 
